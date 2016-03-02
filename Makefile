@@ -366,3 +366,6 @@ lib/gradebook-min.css: lib/gradebook.css
 lib/registerbook-min.js: lib/registerbook.js
 	@echo 'Minimizing lib/registerbook.js'
 	@$(MINIMIZE) lib/registerbook.js --comments '/^!|@preserve|@license|@cc_on/i' > lib/registerbook-min.js
+
+cs342_uwosh: min
+	python $(CONFIG_SCRIPT) config/cs342_uwosh.json --local
