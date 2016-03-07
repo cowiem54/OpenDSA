@@ -9,7 +9,7 @@
 	option: [0,0,0],
 
 	// Initialise the exercise
-	initArr: function(arr_size) {
+	initArr: function() {
 	    
 	    bitCodes = ["00","01","10","11"];
 
