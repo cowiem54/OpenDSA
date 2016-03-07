@@ -1,5 +1,5 @@
 {
-    "title": "Example of Simple Mark",
+    "title": "Booth Multiplication Alogrithm",
     "build_dir": "Books",
     "code_dir": "SourceCode/",
     "code_lang": {
@@ -22,7 +22,7 @@
 		"sections": {}
 	    }
 	},
-	"A Simple Example": {
+	"Booth's Alogrithm": {
 	    "Development/booth": {
 		"long_name": "Simple Example of Using a Slide Show in a Book Module",
 		"sections": {

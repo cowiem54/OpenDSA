@@ -2,6 +2,7 @@
 (function() {
     "use strict";
     var my_array;
+	var answer;
     
     var booth_ex3 = {
 	
@@ -9,21 +10,11 @@
 
 	// Initialise the exercise
 	initArr: function(arr_size) {
-	    var i;
-	    var next_val;
 	    var array_str;
-	    my_array = [];
-	    for (i = 0; i < arr_size; i++) {
-		next_val = Math.floor(Math.random() * 1000 + 1);
-		while (my_array.includes(next_val))
-		    next_val = Math.floor(Math.random() * 1000 + 1);
-		my_array.push(next_val);
-		console.log(" " + next_val);
-	    }
+	    my_array = ["00","01","10","11"];
+		next_val = Math.floor(Math.random() * 4);
 	    array_str = "";
-	    for (i = 0; i < arr_size; i++) {
-		array_str = array_str + " " + my_array[i];
-	    }
+		array_str = my_array[answer];
 	    console.log(array_str);
 	    return array_str;
 	},

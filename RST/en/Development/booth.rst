@@ -4,7 +4,7 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata:: 
-   :author: Team member 1, Team member 2, Team member 3
+   :author: Lukas, Mark, Darren
 
 ============================================================
 Illustrate slide shows in an OpenDSA learning module
@@ -60,4 +60,4 @@ maximum by picking it from a multiple-choice list.
 .. avembed:: Exercises/Development/Booth_ex3.html ka
 
 
-.. odsascript:: AV/Development/booth1.js
+.. odsascript:: AV/Development/booth/booth1.js
