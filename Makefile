@@ -369,3 +369,6 @@ lib/registerbook-min.js: lib/registerbook.js
 
 cs342_uwosh: min
 	python $(CONFIG_SCRIPT) config/cs342_uwosh.json --local
+
+booth: min
+	python $(CONFIG_SCRIPT) config/booth.json --local
