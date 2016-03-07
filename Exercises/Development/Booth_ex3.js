@@ -1,8 +1,8 @@
 /*global window */
 (function() {
     "use strict";
-    var my_array;
-	var answer;
+    var bitCodes;
+	var answerIndex;
     
     var booth_ex3 = {
 	
@@ -10,34 +10,31 @@
 
 	// Initialise the exercise
 	initArr: function(arr_size) {
-	    var i;
-	    var next_val;
-	    var array_str;
-	    my_array = ["00","01","10","11"];
-		answer = Math.floor(Math.random() * 4);
-		console.log(" " + next_val);
-	    array_str = "";
-		array_str = array_str + " " + my_array[answer];
+	    
+	    bitCodes = ["00","01","10","11"];
 
-	    console.log(array_str);
-	    return array_str;
+		answerIndex = Math.floor(Math.random() * 4);
+
+		var displayBits = "Test: " + bitCodes[answerIndex];
+
+	    return displayBits;
 	},
 	
-	maxValue: function() {
+	getAnswer: function() {
 
-		if(answer==0||answer==3){
+		if(answerIndex == 0 || answerIndex == 3) {
 			booth_ex3.option[0] = "Do Nothing";
 			booth_ex3.option[1] = "Add Multiplicand";
 			booth_ex3.option[2] = "Subtract Multiplicand";
 			//answer = "Do Nothing";
 		}
-		else if(answer==1){
+		else if(answerIndex == 1) {
 			booth_ex3.option[0] = "Do Nothing";
 			booth_ex3.option[1] = "Do Nothing";
 			booth_ex3.option[2] = "Subtract Multiplicand";
 			//answer = "Add Multiplicand";
 		}
-		else{
+		else {
 			booth_ex3.option[0] = "Do Nothing";
 			booth_ex3.option[1] = "Add Multiplicand";
 			booth_ex3.option[2] = "Do Nothing";
@@ -45,7 +42,7 @@
 		}
 
 
-	    return answer;
+	    return answerIndex;
 	},
 
     };
