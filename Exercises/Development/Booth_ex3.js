@@ -24,28 +24,23 @@
 	},
 	
 	maxValue: function() {
-
 		if(answer==0||answer==3){
-			booth_ex3.option[0] = "Do Nothing";
+			booth_ex3.option[0] = "Subtract Multiplicand";
 			booth_ex3.option[1] = "Add Multiplicand";
-			booth_ex3.option[2] = "Subtract Multiplicand";
-			//answer = "Do Nothing";
+			return "Do Nothing";
 		}
 		else if(answer==1){
 			booth_ex3.option[0] = "Do Nothing";
-			booth_ex3.option[1] = "Do Nothing";
-			booth_ex3.option[2] = "Subtract Multiplicand";
-			//answer = "Add Multiplicand";
+			booth_ex3.option[1] = "Subtract Multiplicand";
+			return "Add Multiplicand";
 		}
 		else{
 			booth_ex3.option[0] = "Do Nothing";
 			booth_ex3.option[1] = "Add Multiplicand";
-			booth_ex3.option[2] = "Do Nothing";
-			//answer = "Subtract Multiplicand";
+			return "Subtract Multiplicand";
 		}
 
-
-	    return answer;
+	    
 	},
 
     };
