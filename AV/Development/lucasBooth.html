@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Booth's Algorithm</title>
+    <link rel="stylesheet" href="../../JSAV/css/JSAV.css" type="text/css" media="screen" title="no title" charset="utf-8" />
+    <style>
+    #container {
+      width: 98%;
+      position: relative;
+    }
+    .jsavcounter {
+      position: absolute;
+      top: 15px;
+    }
+    .jsavcanvas { height: 200px; }
+	.jsavnode { padding: 5px; }
+    </style>
+  </head>
+  <body>
+    <h1>Booth's Algorithm</h1>
+  <div id="container">
+    <div class="jsavcontrols"></div><span class="jsavcounter"></span>
+    <p class="jsavoutput jsavline"></p>
+    <div class="jsavcanvas"></div>
+  </div>
+  <style>
+  </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="../../JSAV/lib/jquery.transit.js"></script>
+    <script src="../../JSAV/lib/raphael.js"></script>
+    <script src="../../JSAV/build/JSAV.js"></script>
+    <script>
+(function()
+{
+	function decToBin(dec)
+	{
+		var bits = 5;
+		return ("00000" + (dec >>> 0).toString(2)).substr(-bits);
+	}
+
+	function getOperation(bits)
+	{
+		var str = "";
+		if (bits == "00" || bits == "11")
+			str += "Do nothing";
+		else if (bits == "01")
+			str += "Add multiplicand to upper half";
+		else if (bits == "10")
+			str += "Subtract multiplicand from upper half";
+		else
+			str += "Incorrect bit pattern";
+
+		return str += " before the arithmetic right shift."
+	}
+
+   var av = new JSAV("container");
+	
+	var multiplicand = 2;
+	var multiplier = -4;
+	var binplicand = decToBin(multiplicand);
+	var biniplier = decToBin(multiplier);
+	
+	// Slide 1
+   av.umsg("Booth's Algorithm is used to multiply two numbers by shifting" + 
+			  " their bit patterns.");
+
+   av.displayInit();
+   
+	// Slide 2
+	av.umsg("First, we need to know a few things.<br><br>" +
+			  "A multiplcation problem has a multiplicand (" + multiplicand + ") " +
+			  "and a multiplier (" + multiplier + ").");
+
+	av.step();
+	// Slide 3
+
+	av.umsg("Next we will convert these integers into a 5-bit binary form using the " +
+			  "two's complement form.<br>" + multiplicand + " <sub>10</sub> = " +
+			  binplicand + " <sub>2</sub><br>" + multiplier + " <sub>10</sub> = " + 
+			  biniplier + " <sub>2</sub>");
+
+	av.step();
+	// Slide 4
+
+	av.umsg("We will use a 10 bit product register to perform this operation." +
+			  " The upper half is initialized as all zeroes." +
+			  " The lower half represents the multiplier.");
+
+	var arr1 = ["Register", "00000 " + biniplier];
+	var arr2 = ["Multiplicand", binplicand];
+	var m = av.ds.matrix([arr1, arr2]);
+
+   av.step();
+	// Slide 5
+	m.hide();
+
+	av.umsg("We have to keep track of the previous least most bit, which we do not" +
+			  " yet have, as this is the first step. So this will be initialized as 0.");
+
+	var prevBit = 0;
+
+	var arr3 = ["Prev LMS Bit", prevBit];
+	
+	m = av.ds.matrix([arr1, arr2, arr3]);
+
+	av.step();
+	// Slide 6
+	m.hide();
+
+	var currBit = biniplier.substr(-1);
+
+	av.umsg("The current least most significant bit of the register is also used.");
+	var arr4 = ["Curr LMS Bit", currBit];
+
+	m = av.ds.matrix([arr1, arr2, arr3, arr4]);
+
+	av.step();
+	// Slide 7
+	m.hide();
+
+	av.umsg("Using the current bit (left) and the previous bit (right) together," +
+			  " we can determine the correct operation to be performed, if any," +
+			  " before the right arithmetic shift.");
+
+	m = av.ds.matrix([["00", "Do nothing"],["01", "Add multiplicand to upper half"],
+							["10", "Subtract multiplicand from upper half"],
+							["11", "Do nothing"]]);
+	
+	av.step();
+	// Slide 8
+	
+	var opBits = "" + currBit + prevBit;
+
+	av.umsg("The bits together give " + opBits + " which means: " + getOperation(opBits));
+	
+
+   av.recorded();
+}());
+    </script>
+  </body>
+</html>
