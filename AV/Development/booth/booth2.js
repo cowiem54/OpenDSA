@@ -190,7 +190,13 @@ function runit() {
 }
 
     // We are now starting a new slide (#3)
-    av.umsg("The anwser is now display in the lower half of the Product Regester");
+
+
+
+	var answer ="";
+
+	answer = multpldBas10 * multplrBas10;
+    av.umsg("The anwser is now display in the lower half of the Product Regester. It is "+answer+" base10 !");
     av.recorded();
     // If you add av.umsg after av.recorded, it will add new slides in
     // ways that you probably do not expect and probably cannot
