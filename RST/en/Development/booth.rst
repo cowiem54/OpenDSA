@@ -7,16 +7,11 @@
    :author: Lukas, Mark, Darren
 
 ============================================================
-Illustrate slide shows in an OpenDSA learning module
+Welcome to the Booth Multiplication Alogrithm for Signed Integers Tutorial
 ============================================================
 
-Swapping array elements
+First, we need to know a few things
 -----------------------
-
-
-The following slideshow demonstrates how, starting with a slideshow
-like you worked with in the first week's lab, you can incorporate it into a
-learning module as an inlineav.
 
 .. inlineav:: booth1 ss
    :output: show

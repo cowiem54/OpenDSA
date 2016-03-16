@@ -11,7 +11,7 @@ function runit() {
     // Validate the array values a user enters or generate an array of
     // random numbers < 100 of the size selected in the dropdown list
     // if none are provided
-    var theArray = ODSA.AV.processArrayValues(100);
+    var theArray = ODSA.AV.processArrayValues(10);
 
     // If theArray wasn't filled properly, we generate our own 
     if (!theArray) {
@@ -57,7 +57,7 @@ function help() {
 }
   
 // Initialize the arraysize dropdown list
-ODSA.AV.initArraySize(10, 16, 12); // Between 10 and 16, with default at 12
+//ODSA.AV.initArraySize(10, 16, 12); // Between 10 and 16, with default at 12
 
 
 // Connect action callbacks to the HTML entities
