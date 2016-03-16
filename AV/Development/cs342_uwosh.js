@@ -8,8 +8,9 @@ $(document).ready(function () {
     JSAV.init();
 
     var av = new JSAV("cs342_uwosh");
-    var theArray = [20, 30, 44, 54, 55, 11, 78, 14, 13, 79, 12, 98];
+    var theArray = [10, 30, 44, 54, 55, 11, 78, 14, 13, 79, 12, 98];
     var arr = av.ds.array(theArray, {indexed: true});
+	arr.css({"color":"red"});
     av.umsg("Text before displayInit()");
     // Note: av.displayInit() will not affect the number of slides.
     // All that it will do is affect what you get to see on the

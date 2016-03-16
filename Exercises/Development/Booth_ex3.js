@@ -23,7 +23,7 @@
 	maxValue: function() {
 
 		if(answerIndex == 0 || answerIndex == 3) {
-			booth_ex3.option[0] = "Do Nothing";
+			booth_ex3.option[0] = "Subtract Multiplicand";
 			booth_ex3.option[1] = "Add Multiplicand";
 			return "Do Nothing";
 		}
