@@ -11,7 +11,7 @@
 	// Initialise the exercise
 	initArr: function() {
 	    
-	    bitCodes = ["00","01","10","11"];
+	    bitCodes = ["00","10","01","11"];
 
 		answerIndex = Math.floor(Math.random() * 4);
 

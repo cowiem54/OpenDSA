@@ -63,7 +63,30 @@ function runit() {
 	av.umsg("Multiplicand: "+multpldBas10+" base10 = "+multpldBas2+" base2. "+"Multiplier: "+multplrBas10+" base10 = "+multplrBas2+" base2. ");  
 	av.displayInit();
 	
-	av.umsg("Multiplicand: "+multpldBas2+". Operation: "+op+". Below is shown the Product Register. The upper half is populated with the value zero, while the lower half is populated with the value of the Multiplier. We've selected our current operation by using our current LSB in the Product Regester ("+multplrArray[7].toString()+") as the MSB of the operation and a previous bit of zero (since there is no previous operation) as the LSB.");
+	av.umsg("Multiplicand: "+multpldBas2+". Operation: "+op+". Below is shown the Product Register. ");
+ av.step(); 
+	av.umsg("The upper half is populated with the value zero, ",{preserve: true});
+	var j;
+for(j=0;j<8;j++){
+	arr.highlight(0,j);
+	}
+
+ av.step();  
+	av.umsg("while the lower half is populated with the value of the Multiplier. ",{preserve: true}); 
+for(j=9;j<17;j++){
+	arr.highlight(0,j);
+	}
+ av.step();
+
+for(j=0;j<8;j++){
+	arr.unhighlight(0,j);
+	}
+for(j=9;j<17;j++){
+	arr.unhighlight(0,j);
+	}
+ 
+
+	av.umsg("We've selected our current operation by using our current LSB in the Product Regester ("+multplrArray[7].toString()+") as the MSB of the operation and a previous bit of zero (since there is no previous operation) as the LSB.");
 	var j;
 
 	for(j=0;j<8;j++){
@@ -78,7 +101,7 @@ function runit() {
 		for(i = 0; i < 17; i++){
 			arr.value(1,i,arr.value(0,i));
 		}
-	av.umsg("we copy our previous step down then,",{preserve: true});
+	av.umsg("Next we copy our previous step down then,",{preserve: true});
 	av.step();
 	av.umsg(" peform arithmetic right shift (maintaining the sign) on the Product Register.",{preserve: true});
 
@@ -119,7 +142,7 @@ function runit() {
 			arr.value(1,i,arr.value(0,i));
 		}
 
-	av.umsg("Finally we copy our previous step down then,");
+	av.umsg("Next we copy our previous step down then,");
 	av.step();
 	av.umsg(" peform arithmetic right shift (maintaining the sign) on the Product Register.",{preserve: true});
 
@@ -161,7 +184,7 @@ function runit() {
 		}
 
 
-	av.umsg("Finally we copy our previous step down then,");
+	av.umsg("Next we copy our previous step down then,");
 	av.step();
 	av.umsg(" peform arithmetic right shift (maintaining the sign) on the Product Register.",{preserve: true});
 
@@ -176,10 +199,17 @@ function runit() {
 	else{av.umsg("Something has gone wrong.");}
 
 	op = arr.value(1,16).toString()+arr.value(0,16).toString();
+av.step();
 
+av.umsg("Our new op for this next step is "+op);
+
+arr.highlight(0,16);
+arr.highlight(1,16);
 
   av.step();
-	av.umsg("Our new op for this next step is "+op+"So we'll move to the next line.");
+	av.umsg("Now we'll move down to the next line.");
+arr.unhighlight(0,16);
+arr.unhighlight(1,16)
 		var i;
 		for(i = 0; i < 17; i++){
 			arr.value(0,i,arr.value(1,i));
