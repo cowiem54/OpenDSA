@@ -4,7 +4,7 @@
 .. distributed under an MIT open source license.
 
 .. avmetadata:: 
-   :author: Lukas, Mark, Darren
+   :author: Lucas, Mark, Darren
 
 ============================================================
 Welcome to the Booth Multiplication Alogrithm for Signed Integers Tutorial
@@ -16,43 +16,21 @@ First, we need to know a few things
 .. inlineav:: booth1 ss
    :output: show
 
-Swapping array elements with a reset button 
--------------------------------------------
+Take this short quiz first
+-----------------------------------------------------
 
-Here we have the same visualization as in the previous inlineav, but
-now as an embedded AV.  Although it is slightly more complicated this
-way, it allows us to process input from the user on the embedded page.
-Here the user can enter a space-separated list of numbers, or if they
-choose to not do so, an OpenDSA utility randomly generates them for
-the user.
+
+.. avembed:: Exercises/Development/Booth_ex3.html ka
+
+Now we are ready to process the steps!
+-------------------------------------------
 
 
 .. avembed:: AV/Development/booth/booth2.html ss
 
 
-A Khan Academy Exericse with JSAV object
-----------------------------------------
 
-This example shows how to embed a Khan Academy exercise that has the user identify the 
-maximum by clicking on a JSAV array cell.
 
-.. avembed:: Exercises/Development/Booth_ex1.html ka
-
-A Khan Academy Exericse with Fill-in-the-blank Question
--------------------------------------------------------
-
-This example shows how to embed a Khan Academy exercise that has the user identify the 
-maximum by typing the number into a text box.
-
-.. avembed:: Exercises/Development/Booth_ex2.html ka
-
-A Khan Academy Exericse with Multiple Choice Question
------------------------------------------------------
-
-This example shows how to embed a Khan Academy exercise that has the user identify the 
-maximum by picking it from a multiple-choice list.
-
-.. avembed:: Exercises/Development/Booth_ex3.html ka
 
 
 .. odsascript:: AV/Development/booth/booth1.js
