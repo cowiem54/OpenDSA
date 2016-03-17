@@ -15,7 +15,7 @@
 
 		answerIndex = Math.floor(Math.random() * 4);
 
-		var displayBits = "Bits: " + bitCodes[answerIndex];
+		var displayBits = "MSB: Taken from the LSB of the Product Regester from our Current Operation " +bitCodes[answerIndex]+" LSB: Taken from the LSB of the Product Regester from our Previous Operation";
 
 	    return displayBits;
 	},
